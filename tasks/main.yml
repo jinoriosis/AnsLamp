@@ -1,0 +1,19 @@
+---
+# tasks file for AnsLamp
+
+- include: postubuntu.yml
+  when: ansible_os_family == 'Debian'
+
+- include: postcentos.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: apache.yml
+  when: ansible_os_family == 'Debian'
+
+- include: httpd.yml
+  when: ansible_os_family == 'RedHat'
+
+
+
+
+

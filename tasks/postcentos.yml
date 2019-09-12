@@ -1,0 +1,15 @@
+- name: Tweaking SElinux
+  selinux:
+    policy: targeted
+    state: permissive
+
+- name: Installing necessary softwares
+  yum: name="{{item}}" state=present
+  loop:
+    - epel-release
+    - vim
+    - yum-utils
+    - certbot
+    - python2-certbot-apache
+    - mod_ssl
+

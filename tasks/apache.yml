@@ -1,0 +1,6 @@
+- name: install apache2
+  apt: name=apache2 state=present
+
+- name: enabling apache2 on boot
+  service: name=apache2 state=started enabled=yes
+  notify: restart apache
