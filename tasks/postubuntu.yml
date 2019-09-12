@@ -3,13 +3,11 @@
   apt:
     upgrade: yes
     update_cache: yes
-
 - name: Installing necessary softwares
-  apt: name="{{item}}" state=present
+  apt: name="{{ item }}" state=present
   loop:
     - vim
     - yum-utils
     - certbot
     - python2-certbot-apache
     - mod_ssl
-

@@ -2,9 +2,8 @@
   selinux:
     policy: targeted
     state: permissive
-
 - name: Installing necessary softwares
-  yum: name="{{item}}" state=present
+  yum: name="{{ item }}" state=present
   loop:
     - epel-release
     - vim
@@ -12,4 +11,3 @@
     - certbot
     - python2-certbot-apache
     - mod_ssl
-
